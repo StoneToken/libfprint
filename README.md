@@ -35,13 +35,18 @@ Install packages:
  * `libfprint-vfs0090-git` from AUR
 
 #### Fedora (tested on 28)
-- `sudo dnf install -y libusb*-devel libtool nss nss-devel gtk3-devel glib2-devel openssl openssl-devel libXv-devel gcc-c++`
-- `git clone https://github.com/3v1n0/libfprint`
-- `cd fprint && ./autogen.sh && make && sudo make install`
+ - `git clone https://github.com/3v1n0/libfprint`
+ - `cd fprint && meson configure && meson build`
+ - `cd build && ninja`
+ - `cd libfprint && sudo cp libfprint.so* /usr/local/lib && sudo cp libfprint.so* /usr/lib64/`
+ - Use `fprint-enroll` to start
 
 #### Other distros
  - `git clone https://github.com/3v1n0/libfprint`
- - `cd fprint && ./autogen.sh && make && sudo make install`
+ - `cd fprint && meson configure && meson build`
+ - `cd build && ninja`
+ - `cd libfprint && sudo cp libfprint.so* /usr/local/lib && sudo cp libfprint.so* /usr/lib64/`
+ - Use `fprint-enroll` to start
 
 
 #### fprintd enrolling
